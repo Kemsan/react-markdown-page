@@ -1,0 +1,6 @@
+# Storybook
+!.storybook
+
+# Ignore builds
+build/
+client/.next

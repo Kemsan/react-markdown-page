@@ -1,0 +1,3 @@
+---
+| title: Example landing page
+---
