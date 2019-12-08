@@ -1,0 +1,17 @@
+# Core
+!.gitkeep
+
+# Application
+.env
+build
+client/.next
+*/cache/*.json
+coverage
+
+# Editor
+.idea
+.vscode
+
+# Package
+node_modules
+yarn-error.log
