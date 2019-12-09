@@ -18,7 +18,7 @@ interface HomeContext extends NextPageContext {
 const Landing = () => {
   const { query } = useRouter()
   const { page } = query
-  const pageName = String(page)
+  const pageName = String(page || 'home')
 
   return (
     <>

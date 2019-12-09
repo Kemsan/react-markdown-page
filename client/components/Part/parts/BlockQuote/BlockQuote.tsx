@@ -8,16 +8,19 @@ import { SinglePart } from '../partTypes'
 
 // -- COMPONENT
 const InlineCode: React.FunctionComponent<SinglePart> = ({ content, ...props }: SinglePart) => (
-  <Code {...props}><Part components={content} /></Code>
+  <Quote {...props}><Part components={content} /></Quote>
 )
 
 // -- UI
-const Code = styled.code`
-  display: inline-block;
-  
-  font-family: monospace;
+const Quote = styled.blockquote`
+  margin-left: 0;
 
-  background: ${props => props.theme.color('white100')};
+  p {
+    padding: .5rem 1rem 1rem;
+
+    font-style: italic;
+    border-left: 3px solid ${props => props.theme.color('primary')};
+  }
 `
 
 export default InlineCode

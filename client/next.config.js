@@ -10,6 +10,9 @@ const { NODE_ENV } = process.env
 const PRODUCTION = NODE_ENV === 'production'
 
 module.exports = {
+  env: {
+    ...process.env
+  },
   useFileSystemPublicRoutes: false,
   // Declare build directory
   distDir: PRODUCTION ? './../build' : './.next',

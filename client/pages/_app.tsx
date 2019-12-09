@@ -1,5 +1,5 @@
 // -- CORE
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { Provider } from 'react-redux'
 // -- STORE
@@ -18,9 +18,12 @@ interface CustomAppProps extends AppProps {
   stores: object
 }
 
+// -- GLOBAL STORE
+let globalStore
+
 // -- COMPONENT
 const App: React.FunctionComponent<CustomAppProps> = ({ Component, stores }: CustomAppProps) => {
-  const store = initializeStore(stores)
+  const store = globalStore || initializeStore(stores)
 
   return (
     <Provider store={store}>
@@ -41,7 +44,13 @@ App.getInitialProps = async ({ Component, ctx }: AppContext) => {
   const { req } = ctx
 
   // Initialize store
-  const store = initializeStore({})
+  let store = globalStore
+
+  if (req) {
+    store = initializeStore(globalStore)
+  } else if (!globalStore) {
+    store = globalStore = initializeStore({})
+  }
   // Data for component
   let data
 

@@ -77,6 +77,7 @@ class Parser {
 
           resolve(parsed)
         } catch (e) {
+          console.error('Parse error', e)
           reject(e)
         }
       })()
@@ -106,7 +107,9 @@ class Parser {
     // Watch directory
     chokidar.watch(this.templatesDirectory).on('all', (event, path) => {
       if (event === 'change' || event === 'add') {
-        this.parseFile(path)
+        setTimeout(() => {
+          this.parseFile(path)
+        }, 100)
         return
       }
 

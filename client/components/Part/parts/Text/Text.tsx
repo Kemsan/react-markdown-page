@@ -1,15 +1,12 @@
 // -- CORE
 import React from 'react'
 import styled from 'styled-components'
-
-// -- TYPING
-interface TextProps {
-  content: string
-}
+// -- TYPES
+import { SinglePart } from '../partTypes'
 
 // -- COMPONENT
-const Text: React.FunctionComponent<TextProps> = ({ content, ...props }: TextProps) => (
-  <Span {...props}>{content}</Span>
+const Text: React.FunctionComponent<SinglePart> = ({ content, ...props }: SinglePart) => (
+  <Span {...props} dangerouslySetInnerHTML={{ __html: String(content).replace(/\n/, '<br />') }} />
 )
 
 // -- UI

@@ -91,6 +91,8 @@ const theme: Theme = {
     secondary: '#984A7E',
     white: '#fff',
     white100: '#eee',
+    white200: '#F4F6FA',
+    white300: '#ccc',
     black: '#000',
     transparent: 'transparent'
   },

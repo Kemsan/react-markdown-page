@@ -15,6 +15,7 @@ interface HeadProps {
 const Head: React.FunctionComponent<HeadProps> = ({ options }: HeadProps) => (
   <NextHead>
     <style type='text/css' dangerouslySetInnerHTML={{ __html: normalizeCss }} />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&display=swap' rel='stylesheet' />
     <title>{options.title}</title>
   </NextHead>
 )

@@ -2,15 +2,12 @@
 import React from 'react'
 import styled from 'styled-components'
 // -- COMPONENTS
-import Part, { ComponentData } from 'components/Part/Part'
-
-// -- TYPING
-interface BoldProps {
-  content: ComponentData[]
-}
+import Part from 'components/Part/Part'
+// -- TYPES
+import { SinglePart } from '../partTypes'
 
 // -- COMPONENT
-const Bold: React.FunctionComponent<BoldProps> = ({ content, ...props }: BoldProps) => (
+const Bold: React.FunctionComponent<SinglePart> = ({ content, ...props }: SinglePart) => (
   <Strong {...props}><Part components={content} /></Strong>
 )
 

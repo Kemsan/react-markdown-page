@@ -2,15 +2,14 @@
 import React from 'react'
 import styled from 'styled-components'
 // -- COMPONENTS
-import Part, { ComponentData } from 'components/Part/Part'
+import Part from 'components/Part/Part'
+// -- TYPES
+import { SinglePart } from '../partTypes'
 
 // -- TYPING
-interface HeaderProps {
+interface HeaderProps extends SinglePart {
   level: number
-  content: ComponentData[]
 }
-
-// -- DATA
 
 // -- COMPONENT
 const Header: React.FunctionComponent<HeaderProps> = ({ level, content, ...props }: HeaderProps) => {

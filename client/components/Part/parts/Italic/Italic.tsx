@@ -2,15 +2,14 @@
 import React from 'react'
 import styled from 'styled-components'
 // -- COMPONENTS
-import Part, { ComponentData } from 'components/Part/Part'
+import Part from 'components/Part/Part'
+// -- TYPES
+import { SinglePart } from '../partTypes'
 
-// -- TYPING
-interface ItalicProps {
-  content: ComponentData[]
-}
+// -- TYPI
 
 // -- COMPONENT
-const Italic: React.FunctionComponent<ItalicProps> = ({ content, ...props }: ItalicProps) => (
+const Italic: React.FunctionComponent<SinglePart> = ({ content, ...props }: SinglePart) => (
   <Em {...props}><Part components={content} /></Em>
 )
 
