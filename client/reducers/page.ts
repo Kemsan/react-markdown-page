@@ -117,7 +117,6 @@ const reducer: Reducer<PageState> = (state: PageState = initialState, action: Re
       }
     case RECEIVE_PAGE: {
       const pages = state.pages
-      console.log(action.payload)
       const { page, components } = action.payload
 
       return {
@@ -129,7 +128,6 @@ const reducer: Reducer<PageState> = (state: PageState = initialState, action: Re
       }
     }
     case RECEIVE_OPTIONS:
-      console.log(action.payload)
       return {
         ...state,
         options: action.payload.options

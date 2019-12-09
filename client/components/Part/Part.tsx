@@ -19,7 +19,6 @@ const renderComponent = (component: ComponentData, idx: number) => {
   const Component = parts[component.type]
 
   if (component.type === 'inlineCode') {
-    console.log('????', component)
   }
   if (!Component) {
     if (typeof component.content === 'string') {

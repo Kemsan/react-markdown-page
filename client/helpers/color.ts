@@ -17,7 +17,7 @@ export interface ColorRGBA extends ColorRGB {
  *
  * @example
  *
- * console.log(hex2rgb('#ccc'))
+ * hex2rgb('#ccc')
  * // => { a: 204, b: 204, c: 204 }
  */
 export const hex2rgb = (hex: string): ColorRGB => {
@@ -51,7 +51,7 @@ export const hex2rgb = (hex: string): ColorRGB => {
  *
  * @example
  *
- * console.log(hex2rgba('#ccc', 0.2))
+ * hex2rgba('#ccc', 0.2)
  * // => { a: 204, b: 204, c: 204, a: 0.2 }
  */
 export const hex2rgba = (hex: string, opacity: number): ColorRGBA => {
@@ -71,7 +71,7 @@ export const hex2rgba = (hex: string, opacity: number): ColorRGBA => {
  *
  * @example
  *
- * console.log(rgb('#ccc'))
+ * rgb('#ccc')
  * // => rgb(204, 204, 204)
  */
 export const rgb = (hex: string): string => {

@@ -116,7 +116,6 @@ class Cache implements CacheClass {
    */
   add (filePath: string, value: object): Promise<boolean> {
     const dir = this.path(filePath)
-    console.log(filePath, dir)
     const data = JSON.stringify(value)
 
     return fileWrite(dir, data)

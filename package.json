@@ -5,7 +5,7 @@
   "main": "server.js",
   "repository": "git@github.com:Kemsan/react-markdown-page.git",
   "author": "Tomasz Talowski <ttalowski@gmail.com>",
-  "license": "GPLV3",
+  "license": "MIT",
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf build && next build ./client && tsc --project tsconfig.server.json",
