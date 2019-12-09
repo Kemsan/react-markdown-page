@@ -1,6 +1,7 @@
 # react-markdown-page
 React Markdown generic webpage
 
+PoC of markdown landing page system. Using Next + React + StyledComponents + Redux. 
 
 # How to use
 
