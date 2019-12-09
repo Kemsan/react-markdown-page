@@ -23,7 +23,7 @@ const PRODUCTION = process.env.NODE_ENV === 'production'
  *
  * @param config Config for application
  */
-const app = async (config: Object) => {
+const app = async (config: object, paths: object) => {
   const app = next({
     dir: './client',
     dev: !PRODUCTION,
@@ -31,7 +31,7 @@ const app = async (config: Object) => {
   })
 
   const server: express.Express = express()
-  const pages: Pages = new Pages()
+  const pages: Pages = new Pages(paths)
 
   // Prepare app
   await app.prepare()

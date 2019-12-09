@@ -9,6 +9,12 @@ import { fileRead, dirRead } from './helpers/file'
 // -- DATA
 import rulesList from './rules'
 
+// -- TYPING
+export interface ParserOptions {
+  cache?: string
+  templates?: string
+}
+
 // -- CLASS
 class Parser {
   /**
@@ -22,14 +28,19 @@ class Parser {
   parser: markdown.Parser = null
   cache: Cache = null
 
-  constructor () {
+  constructor ({ templates, cache }: ParserOptions) {
     const rules = {
       ...markdown.defaultRules,
       ...rulesList
     }
 
+    // Setup templates directory
+    if (templates) {
+      this.templatesDirectory = templates
+    }
+
     this.parser = markdown.parserFor(rules)
-    this.cache = new Cache()
+    this.cache = new Cache({ dir: cache })
   }
 
   /**

@@ -21,7 +21,8 @@ export interface PagesInterface {
 }
 
 export interface PagesOptions {
-  templatesDirectory?: string
+  cache?: string
+  templates?: string
 }
 
 class Pages implements PagesInterface {
@@ -33,12 +34,12 @@ class Pages implements PagesInterface {
   parser: Parser = null
 
   // -- CONSTRUCTOR
-  constructor ({ templatesDirectory }: PagesOptions = {}) {
-    if (templatesDirectory) {
-      this.templatesDirectory = templatesDirectory
+  constructor ({ cache, templates }: PagesOptions = {}) {
+    if (templates) {
+      this.templatesDirectory = templates
     }
 
-    this.parser = new Parser()
+    this.parser = new Parser({ templates, cache })
   }
 
   /**

@@ -5,7 +5,7 @@
 .env
 build
 client/.next
-*/cache/*.json
+cache/*.json
 coverage
 
 # Editor

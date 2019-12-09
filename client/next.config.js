@@ -3,7 +3,7 @@ const path = require('path')
 // -- DEV
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 // -- DATA
-require('dotenv').config()
+const { parsed } = require('dotenv').config()
 
 // -- ENVS
 const { NODE_ENV } = process.env
@@ -11,7 +11,8 @@ const PRODUCTION = NODE_ENV === 'production'
 
 module.exports = {
   env: {
-    ...process.env
+    // Pass data from .env file
+    ...parsed
   },
   useFileSystemPublicRoutes: false,
   // Declare build directory
